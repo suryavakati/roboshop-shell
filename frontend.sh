@@ -12,6 +12,7 @@ cd /usr/share/nginx/html
 unzip /tmp/frontend.zip
 
 echo -e "\e[35m copying roboshop configuration from config placing in required location \e[0m"
+pwd
 cp $(code_dir)/config/roboshop.conf /etc/nginx/default.d/roboshop.conf 
 
 echo -e "\e[35m enabling nginx \e[0m"
