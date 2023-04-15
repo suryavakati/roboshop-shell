@@ -2,7 +2,7 @@ source common.sh
 
 print_head "installing nginx"
 yum install nginx -y &>>${log_file}
-if [ echo $? eq 0 ]; then 
+if [ $? -eq 0 ]; then 
     echo SUCCESS
 else
     echo FAILURE
