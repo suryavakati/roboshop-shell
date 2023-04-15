@@ -16,9 +16,12 @@ then
     status_check $?
 fi
 
-print_head " creating application directory"
-mkdir /app &>>${log_file}  
-status_check $?
+if [ ! -d /app ];
+then 
+    print_head " creating application directory"
+    mkdir /app &>>${log_file}  
+    status_check $?
+fi
 
 print_head "removing content in the app directory"
 rm -rf /app/* &>>${log_file}  
