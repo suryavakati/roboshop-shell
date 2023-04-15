@@ -46,12 +46,12 @@ print_head "creating user service"
 cp ${code_dir}/config/user.service /etc/systemd/system/user.service &>>${log_file}  
 status_check $?
 
-print_head " reloading services, enabling and starting catalogue service"
+print_head " reloading services, enabling and starting user service"
 systemctl daemon-reload &>>${log_file}  
 status_check $?
-systemctl enable catalogue &>>${log_file}  
+systemctl enable user &>>${log_file}  
 status_check $?
-systemctl start catalogue &>>${log_file}  
+systemctl start user &>>${log_file}  
 status_check $?
 
 print_head " creating mongo schema repo"
