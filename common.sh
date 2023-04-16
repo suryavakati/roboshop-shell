@@ -37,7 +37,7 @@ system_schema(){
         yum install mysql -y  &>>${log_file}  
         status_check $?
 
-        print_head " enabling mongo host"
+        print_head " enabling mysql host"
         mysql -h mysql-dev.devops7.online -uroot -p{mysql_root_password} < /app/schema/${component}.sql  &>>${log_file}  
         status_check $?
     fi
