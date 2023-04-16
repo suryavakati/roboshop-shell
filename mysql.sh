@@ -27,7 +27,7 @@ systemctl start mysqld &>>${log_file}
 status_check $?
 
 print_head "checking whether password is set or not"
-echo show databases | mysql -uroot -p${mysql_root_password}
+echo show databases | mysql -uroot -p${mysql_root_password} &>>${log_file}  
 if [ $? -ne 0 ];
 then 
     print_head "setting up pasword"
