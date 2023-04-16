@@ -30,7 +30,6 @@ print_head "checking whether password is set or not"
 echo show databases | mysql -uroot -p${mysql_root_password} &>>${log_file}  
 if [ $? -ne 0 ];
 then 
-    print_head "setting up pasword"
     mysql_secure_installation --set-root-pass ${mysql_root_password} &>>${log_file}    
 fi
 status_check $?
